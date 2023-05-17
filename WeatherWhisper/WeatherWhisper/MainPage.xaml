@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherWhisper.MainPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <BoxView>
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0" Color="#001a31" />
+                        <GradientStop Offset="1" Color="#009373" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+
+            <StackLayout>
+                <Grid Padding="20" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                        <Label x:Name="locationText" Text="Mejasem Barat" TextColor="White" FontSize="25" FontAttributes="Bold" />
+                        <Label x:Name="countryText" Text="Tegal, Indonesia" TextColor="White" FontSize="18" />
+                    </StackLayout>
+
+                    <Label x:Name="timeText" Text="08:54 AM" TextColor="White" FontSize="21" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" />
+                </Grid>
+
+                <Grid Padding="20" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="locationInput" Grid.Row="0" Grid.Column="0" Placeholder="Location" TextColor="White" />
+
+                    <Button Grid.Row="0" Grid.Column="1" Text="Coordinates" Clicked="Button_Clicked" />
+                </Grid>
+
+                <Grid Padding="20" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="latCoordinates" Grid.Row="0" TextColor="White" />
+                    <Label x:Name="lonCoordinates" Grid.Row="1" TextColor="White" />
+                </Grid>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
