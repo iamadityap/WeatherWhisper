@@ -39,7 +39,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Entry x:Name="locationInput" Grid.Row="0" Grid.Column="0" Placeholder="Location" TextColor="White" />
+                    <Entry x:Name="locationInput" Grid.Row="0" Grid.Column="0" Placeholder="Location" BackgroundColor="White" />
 
                     <Button Grid.Row="0" Grid.Column="1" Text="Coordinates" Clicked="Button_Clicked" />
                 </Grid>
@@ -54,6 +54,8 @@
                     <Label x:Name="lonCoordinates" Grid.Row="1" TextColor="White" />
                 </Grid>
 
+
+                <ActivityIndicator x:Name="IsFetchingWeatherData" Color="White" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>

@@ -7,6 +7,7 @@ namespace WeatherWhisper
   {
     private WeatherService weatherService;
     private LocationCoordinates coords;
+    public bool IsFetchingWeather;
 
     public MainPage()
     {
@@ -29,10 +30,26 @@ namespace WeatherWhisper
     private async void Button_Clicked(object sender, EventArgs e)
     {
       string locationInputText = locationInput.Text;
-      var results = await weatherService.GetLocationCoordinates(locationInputText);
 
-      latCoordinates.Text = results.Latitude.ToString();
-      lonCoordinates.Text = results.Longitude.ToString();
+      if (string.IsNullOrWhiteSpace(locationInputText))
+      {
+        await DisplayAlert("Location", "Please enter a location.", "OK");
+        return;
+      }
+
+
+      try
+      {
+        IsFetchingWeatherData.IsRunning = true;
+
+        var results = await weatherService.GetLocationCoordinates(locationInputText);
+        latCoordinates.Text = results.Latitude.ToString();
+        lonCoordinates.Text = results.Longitude.ToString();
+      }
+      finally
+      {
+        IsFetchingWeatherData.IsRunning = false;
+      }
     }
   }
 }
