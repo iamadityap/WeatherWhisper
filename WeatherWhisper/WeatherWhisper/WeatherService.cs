@@ -6,7 +6,7 @@ namespace WeatherWhisper
 {
   class WeatherService
   {
-    private readonly string API_KEY = "af4aebb78e09001fe7aba01837d3e2f5";
+    private readonly string API_KEY = "";
     private readonly string OneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?";
     private readonly string GeoCodingUrl = "https://api.openweathermap.org/geo/1.0/direct?";
 
